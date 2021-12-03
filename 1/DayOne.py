@@ -1,22 +1,22 @@
-f = open('input.txt')
 
-c = 0
     
 def countDepth():
-    global c
-    for line in f:
-        currentNumber = int(line.rstrip()) 
-        if(int(line.rstrip())<=currentNumber):
-            c+=1
-        else:    
-            currentNumber = line.rstrip()
+    with open('./1/input.txt') as f:
+        c = 0
+        #set the value of the first index to currentNumber.
+        currentNumber = int(f.readline().rstrip()) 
+        #for each line
+        for line in f:
+            l = int(line.rstrip())
+            if(l>currentNumber):
+                c+=1
+            currentNumber = l
+            
+
+    return c
 
 
-
-countDepth()
-
-print(c)
-
+print(countDepth())
         
 
         
