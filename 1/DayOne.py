@@ -27,7 +27,7 @@ def sumThreeIndices():
             sum1 = int(list[0]) + int(list[1]) + int(list[2])
             sum2 = int(list[1]) + int(list[2]) + int(list[3])
 
-            if(sum1<sum2):
+            if(sum2>sum1):
                 c+=1
             
            
