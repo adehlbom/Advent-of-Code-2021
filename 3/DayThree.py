@@ -8,10 +8,9 @@
 
 
 
-from typing import Concatenate
 
 
-def gamma_rate():
+def part_one():
 
     with open('./3/input.txt') as f:
         list = [line.rstrip() for line in f]
@@ -53,4 +52,4 @@ def gamma_rate():
               
 
 
-print(gamma_rate())
+print(part_one())
