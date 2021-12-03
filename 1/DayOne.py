@@ -23,11 +23,11 @@ def sumThreeIndices():
         for line in f:
            list.append(line.rstrip())
         
-        while(len(list)%6):
+        while(len(list)>=6):
             sum1 = int(list[0]) + int(list[1]) + int(list[2])
             sum2 = int(list[1]) + int(list[2]) + int(list[3])
 
-            if(sum2>sum1):
+            if(sum1<sum2):
                 c+=1
             
            
