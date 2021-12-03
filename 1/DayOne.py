@@ -23,7 +23,7 @@ def sumThreeIndices():
         for line in f:
            list.append(line.rstrip())
         
-        while(len(list)>=6):
+        while(len(list)>=4):
             sum1 = int(list[0]) + int(list[1]) + int(list[2])
             sum2 = int(list[1]) + int(list[2]) + int(list[3])
 
@@ -38,7 +38,6 @@ def sumThreeIndices():
         return c  
 
 print(sumThreeIndices())
-
 
 
 
