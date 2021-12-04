@@ -69,7 +69,7 @@ def part_two():
             
             for index,bit in enumerate(binary):
                 oxygen_sheet[index%len(binary)]+=int(bit)
-
+        #determines the most common value and saves that to oxygen_sheet, the inverse is saved to scrubber_sheet
         for index,bit in enumerate(oxygen_sheet):
             if(int(oxygen_sheet[index])>=len(list)/2):
                 oxygen_sheet[index]=1
@@ -79,7 +79,7 @@ def part_two():
                 scrubber_sheet[index] = 1
         print(len(oxygen_list))
         print(len(scrubber_list))
-        
+        #I want to check the cheat sheet with the list binary value and remove 
         for index,binary in enumerate(list):
             for i,bit in enumerate(binary):
                 if(int(oxygen_sheet[i]) == int(bit)):
