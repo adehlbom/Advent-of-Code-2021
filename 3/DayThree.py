@@ -48,10 +48,7 @@ def part_one():
     return int(gamma_output,2)*int(epsilon_output,2)
 
            
-              
 
-
-print(part_one())
 
 
 #multiply oxygen generator rating with CO2 scrubber rating
@@ -60,3 +57,50 @@ print(part_one())
 
 #so I can check for sum > len/2 to determine if I want to keep 0 or 1 for each bit in the number
 #if less pop else do nothing and keep doing that until 1 number is left
+
+def part_two():
+    with open('./3/input.txt') as f:
+        list = [line.rstrip() for line in f]
+        oxygen_sheet = [0]*len(list[0])
+        scrubber_sheet = [0]*len(list[0])
+        oxygen_list = list
+        scrubber_list = list
+        for binary in list:
+            
+            for index,bit in enumerate(binary):
+                oxygen_sheet[index%len(binary)]+=int(bit)
+
+        for index,bit in enumerate(oxygen_sheet):
+            if(int(oxygen_sheet[index])>=len(list)/2):
+                oxygen_sheet[index]=1
+                scrubber_sheet[index] = 0
+            else: 
+                oxygen_sheet[index] = 0
+                scrubber_sheet[index] = 1
+        print(len(oxygen_list))
+        print(len(scrubber_list))
+        
+        for index,binary in enumerate(list):
+            for i,bit in enumerate(binary):
+                if(int(oxygen_sheet[i]) == int(bit)):
+                    print(oxygen_sheet[i])
+                    print(int(bit))
+                    print(index)
+                    scrubber_list.pop(index)
+                else:
+                    oxygen_list.pop(index)
+        
+   
+             
+       
+        
+                
+                
+        
+        
+
+
+
+
+
+print(part_two())
