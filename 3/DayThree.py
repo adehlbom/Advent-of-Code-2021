@@ -26,7 +26,6 @@ def part_one():
             for index,bit in enumerate(binary):
                 gammaArray[index]+=int(bit)
 
-                #sumArray[index]+=int(bit)
         #then check if the total sum of the bits are higher or lower than the total number of binary values
         for index,value in enumerate(gammaArray):
             if(gammaArray[index] > len(list)/2):
@@ -53,3 +52,11 @@ def part_one():
 
 
 print(part_one())
+
+
+#multiply oxygen generator rating with CO2 scrubber rating
+#oxygen value = most common bit in that position, equal = 1
+#CO2 value = least common bit, equal = 0
+
+#so I can check for sum > len/2 to determine if I want to keep 0 or 1 for each bit in the number
+#if less pop else do nothing and keep doing that until 1 number is left
