@@ -80,15 +80,17 @@ def part_two():
         print(len(oxygen_list))
         print(len(scrubber_list))
         #I want to check the cheat sheet with the list binary value and remove 
-        for index,binary in enumerate(list):
-            for i,bit in enumerate(binary):
-                if(int(oxygen_sheet[i]) == int(bit)):
-                    print(oxygen_sheet[i])
-                    print(int(bit))
-                    print(index)
-                    scrubber_list.pop(index)
-                else:
+        s = 0
+        o = 0
+        for index,binary in enumerate(oxygen_list):
+            for bit_index,bit in enumerate(binary):
+                if(int(oxygen_sheet[bit_index]) != int(bit)):
+                    #this should remove the binary value from the scrubber luist that matches the oxygen sheet cheat
                     oxygen_list.pop(index)
+                    s+=1
+        
+        print(len(oxygen_list))
+        print(len(scrubber_list))
         
    
              
