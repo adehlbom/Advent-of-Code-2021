@@ -78,28 +78,32 @@ def part_two():
             else: 
                 oxygen_sheet[i] = 0
                 scrubber_sheet[i] = 1
-        print(len(oxygen_list))
-        print(len(scrubber_list))
-        carl = ""
-        for x in oxygen_sheet:
-            carl+=str(x)
+    
+        
 
             
 
         #nested for loop to match the most common bit value with the bit value from the list and remove if it does not match. 
         #111010001010
         #[1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1]
-        #for binary in list:
-            #for bit_index,bit in enumerate(binary):
-                #if(oxygen_sheet[bit_index] != int(bit) and len(oxygen_list)>0):
+        for binary in list:
+            for bit_index,bit in enumerate(binary):
+                if(oxygen_sheet[bit_index] != int(bit) and len(oxygen_list)>1):
                     #this should remove the binary value from the scrubber list that matches the oxygen sheet cheat
-                    #oxygen_list.pop(oxygen_list.index(binary))
-                    #print(binary)
-                #if(scrubber_sheet[bit_index] != int(bit) and len(scrubber_list)>0):
+                    oxygen_list.pop(oxygen_list.index(binary))
+                    break
+                    
+            for binary in list:
+                for bit_index,bit in enumerate(binary):
+                    if(scrubber_sheet[bit_index] != int(bit) and len(scrubber_list)>1):
                     #this should remove the binary value from the scrubber list that matches the oxygen sheet cheat
-                    #scrubber_list.pop(scrubber_list.index(binary))
-                   #print(binary)
-        print(oxygen_list.index(carl))
+                        scrubber_list.pop(scrubber_list.index(binary))
+                        break
+    print(scrubber_sheet)                        
+    print(scrubber_list[0])
+    print(oxygen_sheet)
+    print(oxygen_list[0])
+
 
                     
                     
